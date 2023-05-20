@@ -19,9 +19,3 @@ def PlaceCreate(request):
         place.name = data_json["name"]
         place.save()
         return HttpResponse("successfully created place")
-    
-def PlaceDelete(request, id):
-    if request.method == 'DELETE':
-        place = Place.objects.get(id=id)
-        place.delete()
-        return HttpResponse("successfully deleted place")
